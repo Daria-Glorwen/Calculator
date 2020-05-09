@@ -25,6 +25,7 @@ namespace Calculator
             string buttonName = null;
             Button button = null;
 
+            Display.Text = "0";
 
             for (int i = 0; i < 10; i++)
             {
@@ -33,13 +34,60 @@ namespace Calculator
                 button.Text = i.ToString();
             }
 
-            button1.Text = "1";
-            button2.Text = "2";
-            button3.Text = "3";
+        }
+
+        private void Button_Click(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            if (Display.Text == "0")
+            {
+                Display.Text = button.Text;
+            }
+            else
+            {
+                Display.Text += button.Text;
+            }
+            
+        }
+
+        private void buttonDecimal_Click(object sender, EventArgs e)
+        {
+            if (!Display.Text.Contains("."))
+            {
+                if (Display.Text == string.Empty)
+                {
+                    Display.Text += "0.";
+                }
+                else
+                {
+                    Display.Text += ".";
+                }
+            }
+            
+        }
+
+        private void buttonClear_Click(object sender, EventArgs e)
+        {
+            Display.Text = "0";
+        }
+
+        private void buttonBackspace_Click(object sender, EventArgs e)
+        {
+                string s = Display.Text;
+                if (s.Length > 1)
+                {
+                    s = s.Substring(0, s.Length - 1);
+                }
+                else
+                {
+                    s = "0";
+                }
+
+                Display.Text = s;
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonSign_Click(object sender, EventArgs e)
         {
 
         }
