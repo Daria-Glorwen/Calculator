@@ -27,6 +27,7 @@ namespace Calculator
 
         private void InitializeCalculator()
         {
+//            decimalSeparator = Convert.ToChar(Thread.CurrentThread.CurrentCulture.NumberFormat.NumberDecimalSeparator);
             this.BackColor = Color.Bisque;
             this.Width = widthSmall;
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
@@ -101,9 +102,17 @@ namespace Calculator
         private void Operation_click (object sender, EventArgs e) 
         {
             Button button = (Button)sender;
-            operation = button.Text;
             numOne = Convert.ToDouble(Display.Text);
+
+            if (button.Text == "√")
+            {
+                Display.Text = Math.Sqrt(numOne).ToString();
+                return;
+            }
+
+
             Display.Text = string.Empty;
+            operation = button.Text;
         }
 
 
@@ -145,11 +154,6 @@ namespace Calculator
             }
 
             Display.Text = result.ToString();
-        }
-
-        private void buttonPower_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void buttonSci_Click(object sender, EventArgs e)

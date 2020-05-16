@@ -52,7 +52,7 @@
             this.buttonPower = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
+            this.buttonSqrt = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
@@ -272,7 +272,7 @@
             this.buttonPower.TabIndex = 20;
             this.buttonPower.Text = "^x";
             this.buttonPower.UseVisualStyleBackColor = true;
-            this.buttonPower.Click += new System.EventHandler(this.buttonPower_Click);
+            this.buttonPower.Click += new System.EventHandler(this.Operation_click);
             // 
             // label1
             // 
@@ -293,14 +293,15 @@
             this.button10.Text = "^x";
             this.button10.UseVisualStyleBackColor = true;
             // 
-            // button11
+            // buttonSqrt
             // 
-            this.button11.Location = new System.Drawing.Point(547, 67);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(75, 75);
-            this.button11.TabIndex = 23;
-            this.button11.Text = "^x";
-            this.button11.UseVisualStyleBackColor = true;
+            this.buttonSqrt.Location = new System.Drawing.Point(547, 67);
+            this.buttonSqrt.Name = "buttonSqrt";
+            this.buttonSqrt.Size = new System.Drawing.Size(75, 75);
+            this.buttonSqrt.TabIndex = 23;
+            this.buttonSqrt.Text = "√";
+            this.buttonSqrt.UseVisualStyleBackColor = true;
+            this.buttonSqrt.Click += new System.EventHandler(this.Operation_click);
             // 
             // button12
             // 
@@ -408,7 +409,7 @@
             this.Controls.Add(this.button14);
             this.Controls.Add(this.button13);
             this.Controls.Add(this.button12);
-            this.Controls.Add(this.button11);
+            this.Controls.Add(this.buttonSqrt);
             this.Controls.Add(this.button10);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonPower);
@@ -465,7 +466,7 @@
         private System.Windows.Forms.Button buttonPower;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button buttonSqrt;
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button button14;
